@@ -6,6 +6,11 @@ router.route('/').get((req,res)=>{
     .then(users=>res.json(users))
     .catch(err=>res.status(400).json('ERRor'+err))
 })
+router.route('/:uname').get((req,res)=>{
+    User.findOne({username:req.params.uname})
+    .then((username)=>res.json(username.username))
+    .catch(err=>res.status(400).json('ERRor'+err))
+})
 
 router.route("/add").post((req,res)=>{
     const username=req.body.username
