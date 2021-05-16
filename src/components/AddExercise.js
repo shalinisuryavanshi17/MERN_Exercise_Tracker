@@ -36,8 +36,14 @@ export default function CreateExcercises() {
             duration:duration,
             date:date,
           })
-          .then((res) => console.log(res.data))
-          .catch((err) => alert("err!!!"));
+          .then((res) => {console.log(res.data)
+          window.location("/")}
+          )
+          .catch((err) => console.log("err!!!"));
+          setusername('')
+          setdesc('')
+          setduration('')
+          setdate('')
       })
       .catch((err) => alert("user not found!!!"));
   }
@@ -49,7 +55,7 @@ export default function CreateExcercises() {
         }}
       >
         <div className="form-group" style={{ margin: "2rem" }}>
-          <h2>Create user</h2>
+          <h2>Create New Exercise!</h2>
           <label>Username</label>
           <input
             type="text"
@@ -91,7 +97,7 @@ export default function CreateExcercises() {
             required
           />
           <button className="btn btn-primary" style={{ marginTop: "1rem" }}>
-            Submit
+            Create Exercise
           </button>
         </div>
       </form>
